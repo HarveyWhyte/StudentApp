@@ -1,6 +1,6 @@
 import kotlin.ranges.contains
 
-class Student (val id: String, val name: String, val course: String, val markIn: Double) {
+class Student (val id: String, val name: String, val course: String) {
     override fun toString() : String {
         return "Name: $name, Course: $course, Mark: $mark"
     }
@@ -11,9 +11,6 @@ class Student (val id: String, val name: String, val course: String, val markIn:
             }
         }
 
-    init {
-        mark = markIn
-    }
     public fun getGrade() : String{
         val grade = when(mark){
             in 70.0..100.0 -> "First"
@@ -24,5 +21,11 @@ class Student (val id: String, val name: String, val course: String, val markIn:
             else -> "percentage must be between 0 and 100"
         }
         return grade
+    }
+
+    public fun didPass() : Boolean{
+        if(mark < 40)
+            return false
+        return true
     }
 }
