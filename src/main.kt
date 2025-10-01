@@ -9,7 +9,8 @@ fun main() {
         val course = readln()
         println("Enter Mark: ")
         val mark = readln().toDouble()
-        val student = Student(id.toString(), name, course, mark)
+        val student = Student(id.toString(), name, course)
+        student.mark = mark
         students.add(student)
         for (student in students) {
             println(student.toString())

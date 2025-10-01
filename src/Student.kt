@@ -2,7 +2,7 @@ import kotlin.ranges.contains
 
 class Student (val id: String, val name: String, val course: String) {
     override fun toString() : String {
-        return "Name: $name, Course: $course, Mark: $mark"
+        return "Name: $name, Course: $course, Mark: $mark, Grade: ${getGrade()}, Passed: ${didPass()}"
     }
     var mark = 0.0
         set(newMark){
